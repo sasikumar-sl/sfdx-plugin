@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { JSONTree } from 'react-json-tree';
-import { AppContainer, Title, InputWrapper } from './App.styles';
+import { AppContainer, Title, InputWrapper, Card } from './App.styles';
 
 
 const theme = {
@@ -75,19 +75,23 @@ export default function App() {
   return (
     <AppContainer>
       <Title>Parent</Title>
-      <InputWrapper>
-         <input
-          type="text"
-          placeholder="Type something to Iframe.."
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          ref={inputRef}
-        />
-        <button onClick={handleSendClick}>Send to Iframe</button>
-      </InputWrapper>
-      <JSONTree data={iframeData} theme={theme} />
+      <Card>
+        <InputWrapper>
+          <input
+            type="text"
+            placeholder="Type something to Iframe.."
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            ref={inputRef}
+          />
+          <button onClick={handleSendClick}>Send to Iframe</button>
+        </InputWrapper>
+        <JSONTree data={iframeData} theme={theme} />
+      </Card>
       <Title>Iframe</Title>
-      <iframe src={url} title="Demo Iframe" ref={iframeRef}/>
+      <Card>
+        <iframe src={url} title="Demo Iframe" ref={iframeRef}/>
+      </Card>
 
     </AppContainer>
   )
