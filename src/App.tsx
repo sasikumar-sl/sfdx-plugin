@@ -62,9 +62,9 @@ export default function App() {
 
   useEffect(() => {
 
-    setInterval(() => {
-      sendToIframe({methodName: 'parent-counter',  data: count.current++});
-    }, 1000);
+    // setInterval(() => {
+    //   sendToIframe({methodName: 'parent-counter',  data: count.current++});
+    // }, 1000);
   }, []);
 
   const handleSendClick = () => {

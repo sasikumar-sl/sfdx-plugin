@@ -7,6 +7,7 @@ export const AppContainer = styled.div`
   iframe {
     width: 100%;
     height: 100%;
+    min-height: 520px;
 
     border: none;
     border-width: 0;
